@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public  class PointerMovement : MonoBehaviour {
@@ -11,14 +11,14 @@ public  class PointerMovement : MonoBehaviour {
 
 	void Start () {
 		positionVector = new Vector3 (originalPosition.transform.position.x, originalPosition.transform.position.y, originalPosition.transform.position.z);
-		speedMovementPointer = 0.5f;
+		speedMovementPointer = 0.1f;
 	}
 
 
 
 	void Update () {
 	
-		positionX =  + Mathf.PingPong (Time.time * speedMovementPointer, 0.5f) - 0.25f;
+		positionX =  + Mathf.PingPong (Time.time * speedMovementPointer, 0.25f) - 0.15f;
 		positionVector = new Vector3 (positionX, originalPosition.transform.position.y, originalPosition.transform.position.z);
 		originalPosition.transform.position = positionVector;
 	}
