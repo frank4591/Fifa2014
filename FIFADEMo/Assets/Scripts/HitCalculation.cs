@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class HitCalculation : MonoBehaviour {
@@ -25,8 +25,9 @@ public class HitCalculation : MonoBehaviour {
 		fromPosition = new Vector2 (markerobject.position.x, markerobject.position.z);
 		toPosition = new Vector2 (pointer.originalPosition.transform.position.x, pointer.originalPosition.transform.position.z);
 		angleBetween = Vector2.Angle (fromPosition, toPosition);
-
-
+		if (markerobject.position.x > pointerObject.position.x) {
+			angleBetween = - angleBetween;
+				} 
 	
 	}
 }
